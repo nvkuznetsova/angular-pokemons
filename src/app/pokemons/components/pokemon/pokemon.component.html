@@ -1,0 +1,9 @@
+<mat-card class="pokemon-card">
+  <mat-card-header>
+    <mat-card-title>{{ pokemon.name | titlecase }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="getPokemonImagePath()">
+  <mat-card-actions>
+    <button mat-raised-button color="primary">CATCH</button>
+  </mat-card-actions>
+</mat-card>

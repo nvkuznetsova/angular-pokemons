@@ -1,0 +1,15 @@
+.spinner-container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    background-color: rgba(#fff, 0.8);
+
+    .spinner-center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+    }
+}
