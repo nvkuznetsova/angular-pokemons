@@ -1,3 +1,4 @@
+import { PokemonsService } from 'src/app/services/pokemons/pokemons.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,6 +13,7 @@ import { PokemonsEffectsEffects } from './store/pokemons/effects/pokemons-effect
 import { StoreModule } from '@ngrx/store';
 import { reducerProvider, REDUCERS_TOKEN } from './store';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     StoreModule.forRoot(REDUCERS_TOKEN),
     EffectsModule.forRoot([PokemonsEffectsEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25 }),
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [reducerProvider],
   bootstrap: [AppComponent]

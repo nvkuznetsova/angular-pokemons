@@ -1,7 +1,9 @@
+import { State } from './../../../store/index';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Pokemon } from 'src/app/domain/pokemons';
-import { PokemonsService } from 'src/app/services/pokemons/pokemons.service';
+import { selectPokemons } from '../../../store/pokemons/selectors/pokemons-selectors.selectors';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -9,12 +11,10 @@ import { PokemonsService } from 'src/app/services/pokemons/pokemons.service';
   styleUrls: ['./pokemon-list.component.scss']
 })
 export class PokemonListComponent implements OnInit {
-  public pokemons: Observable<Pokemon[]>;
+  public pokemons$: Observable<Pokemon[]> = this.store.select(selectPokemons);
 
-  constructor(private pokemonsService: PokemonsService) { }
+  constructor(private store: Store<State>) { }
 
-  ngOnInit(): void {
-    this.pokemons = this.pokemonsService.getPokemons();
-  }
+  ngOnInit(): void {}
 
 }

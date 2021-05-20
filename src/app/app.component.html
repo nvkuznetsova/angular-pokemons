@@ -5,5 +5,5 @@
   <router-outlet></router-outlet>
 </main>
 
-<!-- <app-spinner></app-spinner> -->
+<app-spinner *ngIf="isLoading$ | async"></app-spinner>
 </section>

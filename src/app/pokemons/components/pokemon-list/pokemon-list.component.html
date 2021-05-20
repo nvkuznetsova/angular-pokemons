@@ -1,5 +1,5 @@
 <div class="pokemons-container">
-  <div *ngFor="let pokemon of pokemons | async" class="pokemon">
+  <div *ngFor="let pokemon of pokemons$ | async" class="pokemon">
     <app-pokemon routerLink="/pokemon/{{pokemon.id}}" [pokemon]="pokemon" ></app-pokemon>
   </div>
 </div>

@@ -1,9 +1,9 @@
+import { State } from './../../../store/index';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
 import { Pokemon } from 'src/app/domain/pokemons';
-import { PokemonsService } from 'src/app/services/pokemons/pokemons.service';
+import { Store } from '@ngrx/store';
+import { selectPokemonById } from 'src/app/store/pokemons/selectors/pokemons-selectors.selectors';
 
 @Component({
   selector: 'app-pokemon-page',
@@ -11,15 +11,10 @@ import { PokemonsService } from 'src/app/services/pokemons/pokemons.service';
   styleUrls: ['./pokemon-page.component.scss']
 })
 export class PokemonPageComponent implements OnInit {
-  public pokemon: Observable<Pokemon>;
+  public pokemon$: Observable<Pokemon> = this.store.select(selectPokemonById);
 
-  constructor(private pokemonsService: PokemonsService, private route: ActivatedRoute) { }
+  constructor(private store: Store<State>) { }
 
-  ngOnInit(): void {
-    this.pokemon = this.route.params.pipe(
-      map((p) => p.id),
-      switchMap((id) => this.pokemonsService.getPokemonById(id))
-    );
-  }
+  ngOnInit(): void {}
 
 }
