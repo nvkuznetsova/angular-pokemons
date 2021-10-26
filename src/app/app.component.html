@@ -1,9 +1,10 @@
-
 <section class="main-container">
-<h2>pokemons</h2>
-<main class="main-content">
-  <router-outlet></router-outlet>
-</main>
+  <header>
+    <app-header></app-header>
+  </header>
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
 
-<app-spinner *ngIf="isLoading$ | async"></app-spinner>
+  <app-spinner *ngIf="isLoading$ | async"></app-spinner>
 </section>

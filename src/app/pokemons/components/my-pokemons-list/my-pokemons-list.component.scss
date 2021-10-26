@@ -1,0 +1,16 @@
+.my-pokemons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .my-pokemon {
+    max-width: 200px;
+    margin: 10px 1px;
+    cursor: pointer;
+  }
+
+  .back-button {
+    margin: 50px 0px;
+  }
+}

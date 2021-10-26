@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Pokemon } from 'src/app/domain/pokemons';
+import { MyPokemon, Pokemon } from 'src/app/domain/pokemons';
 
 @Component({
   selector: 'app-pokemon',
@@ -9,10 +9,12 @@ import { Pokemon } from 'src/app/domain/pokemons';
 export class PokemonComponent {
   @Input() pokemon: Pokemon;
 
+  public get catchDate(): Date {
+    return (this.pokemon as any)?.date ?? null;
+  }
+
   public getPokemonImagePath(): string {
     const imageId = (this.pokemon.id <= 720) ? this.pokemon.id : this.pokemon.id % 100 + 1;
     return `././assets/pokemons/${imageId}.png`;
   }
-
-  constructor() { }
 }

@@ -8,13 +8,15 @@ import { PokemonsRoutingModule } from './pokemons-routing.module';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonPageComponent } from './components/pokemon-page/pokemon-page.component';
+import { MyPokemonsListComponent } from './components/my-pokemons-list/my-pokemons-list.component';
 
 
 @NgModule({
   declarations: [
     PokemonComponent,
     PokemonListComponent,
-    PokemonPageComponent
+    PokemonPageComponent,
+    MyPokemonsListComponent
   ],
   imports: [
     CommonModule,

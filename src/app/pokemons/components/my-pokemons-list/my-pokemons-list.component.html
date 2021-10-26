@@ -1,0 +1,9 @@
+<h2>My Pokemons</h2>
+<div class="my-pokemons-container">
+  <div *ngFor="let pokemon of myPokemons$ | async" class="my-pokemon">
+    <app-pokemon [pokemon]="pokemon"></app-pokemon>
+  </div>
+  <div class="back-button">
+    <button routerLink="/all-pokemons" mat-button color="primary">BACK</button>
+  </div>
+</div>

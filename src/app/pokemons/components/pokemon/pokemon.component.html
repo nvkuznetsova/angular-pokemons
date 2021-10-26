@@ -2,8 +2,12 @@
   <mat-card-header>
     <mat-card-title>{{ pokemon.name | titlecase }}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image [src]="getPokemonImagePath()">
-  <mat-card-actions>
+  <a routerLink="/pokemon/{{pokemon.id}}"><img mat-card-image [src]="getPokemonImagePath()" /></a>
+  <mat-card-actions *ngIf="!catchDate; else date">
     <button mat-raised-button color="primary">CATCH</button>
   </mat-card-actions>
 </mat-card>
+
+<ng-template #date>
+  <mat-card-subtitle>{{ catchDate | date : dd-MM-yyyy}}</mat-card-subtitle>
+</ng-template>
