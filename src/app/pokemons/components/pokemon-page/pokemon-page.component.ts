@@ -1,5 +1,5 @@
 import { State } from './../../../store/index';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Pokemon } from 'src/app/domain/pokemons';
 import { Store } from '@ngrx/store';
@@ -8,7 +8,8 @@ import { selectPokemonById } from 'src/app/store/pokemons/selectors/pokemons-sel
 @Component({
   selector: 'app-pokemon-page',
   templateUrl: './pokemon-page.component.html',
-  styleUrls: ['./pokemon-page.component.scss']
+  styleUrls: ['./pokemon-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PokemonPageComponent implements OnInit {
   public pokemon$: Observable<Pokemon> = this.store.select(selectPokemonById);

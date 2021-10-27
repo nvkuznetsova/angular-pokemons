@@ -1,5 +1,6 @@
+import { catchPokemon } from './../../../store/pokemons/actions/pokemons-actions.actions';
 import { State } from './../../../store/index';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Pokemon } from 'src/app/domain/pokemons';
@@ -8,11 +9,15 @@ import { selectPokemons } from '../../../store/pokemons/selectors/pokemons-selec
 @Component({
   selector: 'app-pokemon-list',
   templateUrl: './pokemon-list.component.html',
-  styleUrls: ['./pokemon-list.component.scss']
+  styleUrls: ['./pokemon-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PokemonListComponent {
   public pokemons$: Observable<Pokemon[]> = this.store.select(selectPokemons);
 
   constructor(private store: Store<State>) { }
 
+  public onCatchPokemon(name: string): void {
+    this.store.dispatch(catchPokemon({ name }));
+  }
 }

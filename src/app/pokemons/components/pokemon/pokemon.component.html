@@ -4,7 +4,7 @@
   </mat-card-header>
   <a routerLink="/pokemon/{{pokemon.id}}"><img mat-card-image [src]="getPokemonImagePath()" /></a>
   <mat-card-actions *ngIf="!catchDate; else date">
-    <button mat-raised-button color="primary">CATCH</button>
+    <button mat-raised-button color="primary" (click)="onCatchPokemon()">CATCH</button>
   </mat-card-actions>
 </mat-card>
 

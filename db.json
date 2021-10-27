@@ -3797,5 +3797,16 @@
       "id": 10147
     }
   ],
-  "my-pokemons": []
+  "my-pokemons": [
+    {
+      "name": "rattata",
+      "date": "2021-10-26T19:31:28.387Z",
+      "id": 1
+    },
+    {
+      "name": "charizard",
+      "date": "2021-10-26T19:33:11.399Z",
+      "id": 2
+    }
+  ]
 }
