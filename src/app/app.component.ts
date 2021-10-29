@@ -1,3 +1,4 @@
+import { getMyPokemons } from './store/my-pokemons/actions/my-pokemons.actions';
 import { selectIsLoading } from './store/pokemons/selectors/pokemons-selectors.selectors';
 import { getPokemons } from './store/pokemons/actions/pokemons-actions.actions';
 import { State } from './store/index';
@@ -17,5 +18,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(getPokemons());
+    this.store.dispatch(getMyPokemons());
   }
 }

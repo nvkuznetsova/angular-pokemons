@@ -15,6 +15,7 @@ import { reducerProvider, REDUCERS_TOKEN } from './store';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { HeaderComponent } from './components/header/header.component';
+import { MyPokemonsEffects } from './store/my-pokemons/effects/my-pokemons.effects';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { HeaderComponent } from './components/header/header.component';
     MatProgressSpinnerModule,
     MatTabsModule,
     StoreModule.forRoot(REDUCERS_TOKEN),
-    EffectsModule.forRoot([PokemonsEffectsEffects]),
+    EffectsModule.forRoot([PokemonsEffectsEffects, MyPokemonsEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25 }),
     StoreRouterConnectingModule.forRoot(),
   ],

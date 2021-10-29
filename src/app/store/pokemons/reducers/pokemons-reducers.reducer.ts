@@ -2,7 +2,6 @@ import { createReducer, on } from '@ngrx/store';
 import { Pokemon } from 'src/app/domain/pokemons';
 import * as fromPokemonsActions from '../actions/pokemons-actions.actions';
 
-
 export const pokemonsReducersFeatureKey = 'pokemons';
 
 export interface State {

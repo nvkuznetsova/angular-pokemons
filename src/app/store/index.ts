@@ -1,6 +1,7 @@
 import { InjectionToken } from '@angular/core';
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
 import * as fromPokemons from './pokemons/reducers/pokemons-reducers.reducer';
+import * as fromMyPokemons from './my-pokemons/reducers/my-pokemons.reducer';
 import * as fromRouter from '@ngrx/router-store';
 
 export const selectRouter = createFeatureSelector<State, fromRouter.RouterReducerState<any>>('router');
@@ -17,11 +18,13 @@ export const {
 
 export interface State {
   [fromPokemons.pokemonsReducersFeatureKey]: fromPokemons.State;
+  [fromMyPokemons.myPokemonsFeatureKey]: fromMyPokemons.State;
   router: fromRouter.RouterReducerState<any>;
 }
 
 export const reducers: ActionReducerMap<State> = {
   [fromPokemons.pokemonsReducersFeatureKey]: fromPokemons.reducer,
+  [fromMyPokemons.myPokemonsFeatureKey]: fromMyPokemons.reducer,
   router: fromRouter.routerReducer,
 };
 
