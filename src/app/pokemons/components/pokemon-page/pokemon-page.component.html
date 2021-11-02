@@ -3,6 +3,6 @@
     <app-pokemon [pokemon]="pokemon$ | async"></app-pokemon>
   </div>
   <div class="back-button">
-    <button routerLink="/all-pokemons" mat-button color="primary">BACK</button>
+    <button routerLink="/all-pokemons" mat-button color="primary" (click)="onClick()">BACK</button>
   </div>
 </div>

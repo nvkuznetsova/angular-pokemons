@@ -1,3 +1,4 @@
+import { catchPokemon } from './../../../store/pokemons/actions/pokemons-actions.actions';
 import { State } from './../../../store/index';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -16,5 +17,7 @@ export class PokemonListComponent {
 
   constructor(private store: Store<State>) { }
 
-  public onCatchPokemon(name: string): void {}
+  public onCatchPokemon(name: string): void {
+    this.store.dispatch(catchPokemon({ name }));
+  }
 }

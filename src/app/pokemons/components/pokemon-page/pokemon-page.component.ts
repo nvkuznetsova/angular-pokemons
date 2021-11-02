@@ -13,9 +13,14 @@ import { selectPokemonById } from 'src/app/store/pokemons/selectors/pokemons-sel
 })
 export class PokemonPageComponent implements OnInit {
   public pokemon$: Observable<Pokemon> = this.store.select(selectPokemonById);
+  public name = '';
 
   constructor(private store: Store<State>) { }
 
   ngOnInit(): void {}
+
+  public onClick(): void {
+    this.name = 'test';
+  }
 
 }
